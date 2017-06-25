@@ -4,11 +4,11 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives
 import akka.stream.ActorMaterializer
-import msm.sc.routes.{ BaseRoutes, SimpleRoutes }
+import msm.sc.routes.{ BaseRoutes, ServiceDiscovery }
 
 import scala.io.StdIn
 
-object WebServer extends Directives with SimpleRoutes {
+object SidecarServer extends Directives with ServiceDiscovery {
   def main(args: Array[String]) {
 
     implicit val system = ActorSystem("my-system")
@@ -25,8 +25,5 @@ object WebServer extends Directives with SimpleRoutes {
       .onComplete(_ => system.terminate()) // and shutdown when done
   }
 
-  // Here you can define all the different routes you want to have served by this web server
-  // Note that routes might be defined in separated traits like the current case
-  val routes = BaseRoutes.baseRoutes ~ simpleRoutes
-
+  val routes = BaseRoutes.baseRoutes ~ sdRoutes
 }
