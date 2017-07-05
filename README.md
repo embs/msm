@@ -40,6 +40,7 @@ easily bootstrapping one etcd node within a Docker-managed container:
 Default port numbers for msm services are settled as follows
 
 - msm-sc: 9001
+- msm-sdw: 9002
 
 ### Developers Guidelines
 
