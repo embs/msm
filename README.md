@@ -8,6 +8,8 @@ msm itself runs as a bunch of microservices. It's composed by the following
 components:
 
 - msm-sc: a container sidecar service for each service relying on msm
+  - msm-jsc: the current (Java) implementation for the sidecar
+- msm-sdw: a listener for services arrivals who writes to etcd
 
 Head for the component subdir for more info about them (inside their READMEs).
 
