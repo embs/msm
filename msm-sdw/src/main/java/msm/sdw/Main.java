@@ -15,7 +15,7 @@ public class Main {
         System.out.printf("offset = %d, key = %s, value = %s%n",
                           record.offset(), record.key(), record.value());
 
-        writer.write("new_service", record.value());
+        writer.write(record.key(), record.value());
       }
     }
   }
