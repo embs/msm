@@ -28,6 +28,13 @@ dependency may be easily provided through docker with
 
     $ ./run-kafka
 
+### etcd
+
+msm depends on etcd for providing service discovery. There is a script for
+easily bootstrapping one etcd node within a Docker-managed container:
+
+    $ ./run-etcd
+
 ### Ports
 
 Default port numbers for msm services are settled as follows
