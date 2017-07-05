@@ -37,7 +37,7 @@ Create msm network if you haven't already:
 
 Run
 
-    $ KAFKA_ADDR=kafka:9092 docker run --name msm-jsc --network msm -d -p 9001:8080 embs/msm-jsc
+    $ docker run --name msm-jsc --network msm -d -p 9001:8080 embs/msm-jsc
 
 ### Config Kafka broker address
 
