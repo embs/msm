@@ -11,6 +11,29 @@ components:
 
 Head for the component subdir for more info about them (inside their READMEs).
 
+### Docker
+
+Docker can be used for running msm components and dependencies. Check out
+instructions about running each component through Docker within their READMEs.
+Some of the sections below guide on how to run some dependencies.
+
+Setup Docker network (common to msm components and dependencies):
+
+    $ docker network create msm
+
+### Kafka
+
+msm depends on kafka for providing some services (e.g.: Service Discovery). This
+dependency may be easily provided through docker with
+
+    $ ./run-kafka
+
+### Ports
+
+Default port numbers for msm services are settled as follows
+
+- msm-sc: 9001
+
 ### Developers Guidelines
 
 #### Commit messages
