@@ -15,6 +15,11 @@ services registering topic info and writes them to etcd.
 Check out msm top level README for guidance on providing components dependencies
 through Docker.
 
+_A note on jetcd client:_ msm-sdw uses the [jetcd][jetcd] Java etcd client for
+interacting with etcd. At this moment, their code is not available as an
+artifact from code repositories. So it's necessary to download and install it
+locally.
+
 ### Build
 
     $ gradle build
@@ -42,3 +47,5 @@ Run (make sure msm bridge network already exists):
 You may configure Kafka and etcd addresses through envars. E.g.:
 
     $ KAFKA_ADDR=custom:1234 ETCD_ADDR=etcd:8788 gradle bootRun
+
+[jetcd]: https://github.com/coreos/jetcd
