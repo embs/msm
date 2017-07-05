@@ -26,3 +26,19 @@ through Docker.
 Or as a jar:
 
     $ java -jar build/libs/msm-sdw-0.1.0.jar
+
+### Docker
+
+Build image (make sure you've already built the project for generating the jar)
+
+    $ docker build -t embs/msm-sdw .
+
+Run (make sure msm bridge network already exists):
+
+    $ docker run --name msm-sdw --network msm -d -p 9002:8080 embs/msm-sdw
+
+### Configuring dependencies addresses
+
+You may configure Kafka and etcd addresses through envars. E.g.:
+
+    $ KAFKA_ADDR=custom:1234 ETCD_ADDR=etcd:8788 gradle bootRun

@@ -27,11 +27,20 @@ public class Listener {
     props = new Properties();
     String srlzr = "org.apache.kafka.common.serialization.StringDeserializer";
 
-    props.put("bootstrap.servers", "localhost:9092");
+    props.put("bootstrap.servers", kafkaAddr());
     props.put("group.id", CONSUMER_GROUP);
     props.put("enable.auto.commit", "true");
     props.put("auto.commit.interval.ms", "1000");
     props.put("key.deserializer", srlzr); 
     props.put("value.deserializer", srlzr); 
+  }
+
+  private String kafkaAddr() {
+    String envar = System.getenv("KAFKA_ADDR");
+
+    if(envar != null)
+      return envar;
+
+    return "localhost:9092";
   }
 }

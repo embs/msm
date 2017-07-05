@@ -9,7 +9,7 @@ public class Writer {
   private KV kvClient;
 
   public Writer() throws Exception {
-    String endpoint = "http://0.0.0.0:2379";
+    String endpoint = etcdAddr(); 
     Client client = ClientBuilder.newBuilder().setEndpoints(endpoint).build();
     kvClient = client.getKVClient();
   }
@@ -21,5 +21,14 @@ public class Writer {
     ByteSequence valueB = ByteSequence.fromString(value);
 
     kvClient.put(keyB, valueB).get();
+  }
+
+  private String etcdAddr() {
+    String envar = System.getenv("ETCD_ADDR");
+
+    if(envar != null)
+      return envar;
+
+    return "http://0.0.0.0:2379";
   }
 }
