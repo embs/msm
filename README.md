@@ -10,6 +10,7 @@ components:
 - msm-sc: a container sidecar service for each service relying on msm
   - msm-jsc: the current (Java) implementation for the sidecar
 - msm-sdw: a listener for services arrivals who writes to etcd
+- msm-sdf: a service for finding other services
 
 Head for the component subdir for more info about them (inside their READMEs).
 
@@ -43,6 +44,7 @@ Default port numbers for msm services are settled as follows
 
 - msm-sc: 9001
 - msm-sdw: 9002
+- msm-sdf: 9003
 
 ### Developers Guidelines
 

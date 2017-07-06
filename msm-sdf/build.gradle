@@ -10,11 +10,12 @@ buildscript {
 apply plugin: 'org.springframework.boot'
 
 jar {
-  baseName = 'msm-jsc'
+  baseName = 'msm-sdf'
   version  = '0.1.0'
 }
 
 repositories {
+  mavenLocal()
   mavenCentral()
 }
 
@@ -22,9 +23,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-  compile group: 'org.apache.kafka', name: 'kafka-clients', version: '0.11.0.0'
   compile 'org.springframework.boot:spring-boot-starter-web'
-  compile("org.springframework:spring-web")
-  compile("com.fasterxml.jackson.core:jackson-databind")
+  compile group: 'com.coreos', name: 'jetcd', version: '0.1.0-SNAPSHOT'
   testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
