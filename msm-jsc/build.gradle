@@ -24,5 +24,7 @@ targetCompatibility = 1.8
 dependencies {
   compile group: 'org.apache.kafka', name: 'kafka-clients', version: '0.11.0.0'
   compile 'org.springframework.boot:spring-boot-starter-web'
+  compile("org.springframework:spring-web")
+  compile("com.fasterxml.jackson.core:jackson-databind")
   testCompile 'org.springframework.boot:spring-boot-starter-test'
 }

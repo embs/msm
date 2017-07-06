@@ -9,9 +9,10 @@ This is a Java implementation for msm sidecar.
 ### Depends on
 
 - Kafka
+- msm-sdf
 
-Check out msm top level README for guidance on providing components dependencies
-through Docker.
+Check out msm top level (or others msm components) README for guidance on
+providing components dependencies through Docker.
 
 ### Build
 
@@ -46,3 +47,9 @@ Set a `KAFKA_ADDR` envar. For instance (set `custom` host on port `1234`):
     $ KAFKA_ADDR=custom:1234 gradle bootRun 
 
 Default address is localhost:9092.
+
+### Config msm-sdf address
+
+As with Kafka address, just set the `SDF_ADDR` envar:
+
+    $ SDF_ADDR=custom:6547 gradle bootRun
