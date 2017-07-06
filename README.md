@@ -46,6 +46,10 @@ Default port numbers for msm services are settled as follows
 - msm-sdw: 9002
 - msm-sdf: 9003
 
+_Note_: These por numbers are nothing more than a suggestion. This is
+especially true for the sidecar because it's run on a per-microservice basis --
+so assigning same port number wouldn't be possible using the same network stack.
+
 ### Developers Guidelines
 
 #### Commit messages
